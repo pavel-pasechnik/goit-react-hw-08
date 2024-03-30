@@ -1,19 +1,45 @@
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
+} from 'redux-persist';
 import { configureStore } from '@reduxjs/toolkit';
+// eslint-disable-next-line n/no-missing-import
+import storage from 'redux-persist/lib/storage';
 
-import contactsReducer from './contactsSlice.js';
-import filtersReducer from './filtersSlice.js';
+import authReducer from './auth/slice.js';
+import contactsReducer from './contacts/contactsSlice.js';
+import filtersReducer from './filters/filtersSlice.js';
 
-// const initialState = {
-//   contacts: {
-//     items: [],
-//     loading: false,
-//     error: null,
-//   },
-//   filters: {
-//     name: '',
-//   },
-// };
+const authPersistConfig = {
+  key: 'authSlice',
+  storage,
+  whitelist: ['token'],
+};
+
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
-  reducer: { contacts: contactsReducer, filters: filtersReducer },
+  reducer: {
+    auth: persistedAuthReducer,
+    contacts: contactsReducer,
+    filters: filtersReducer,
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+export const persistor = persistStore(store);
+
+// export const store = configureStore({
+//   reducer: { contacts: contactsReducer, filters: filtersReducer },
+// });

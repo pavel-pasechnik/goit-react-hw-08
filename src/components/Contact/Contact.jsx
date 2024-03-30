@@ -1,6 +1,6 @@
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPersonSharp } from 'react-icons/io5';
-import { deleteContact } from '../../redux/contactsOps.js';
+import { deleteContact } from '../../redux/contacts/contactsOps.js';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 
