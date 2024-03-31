@@ -1,9 +1,9 @@
 import { Field, Form, Formik } from 'formik';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPersonSharp } from 'react-icons/io5';
-import { fetchContacts } from '../../redux/contacts/contactsOps.js';
+import { fetchContacts } from '../../redux/contacts/operations.js';
 import { toast } from 'react-hot-toast';
-import { updateContact } from '../../redux/contacts/contactsOps.js';
+import { updateContact } from '../../redux/contacts/operations.js';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 

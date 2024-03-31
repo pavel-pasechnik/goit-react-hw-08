@@ -1,4 +1,4 @@
-import { addContact, deleteContact, fetchContacts } from './contactsOps.js';
+import { addContact, deleteContact, fetchContacts } from './operations.js';
 import { createSlice } from '@reduxjs/toolkit';
 import { logout } from '../auth/operations.js';
 

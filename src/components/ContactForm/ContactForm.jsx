@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { addContact } from '../../redux/contacts/contactsOps.js';
+import { addContact } from '../../redux/contacts/operations.js';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useId } from 'react';

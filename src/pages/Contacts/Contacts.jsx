@@ -4,12 +4,12 @@ import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import ContactList from '../../components/ContactList/ContactList.jsx';
 import SearchBox from '../../components/SearchBox/SearchBox.jsx';
 import { Suspense } from 'react';
-import { fetchContacts } from '../../redux/contacts/contactsOps.js';
+import { fetchContacts } from '../../redux/contacts/operations.js';
 import { useEffect } from 'react';
 
-import css from './ContactsPage.module.css';
+import css from './Contacts.module.css';
 
-export default function ContactsPage() {
+export default function Contacts() {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);

@@ -7,15 +7,13 @@ import { Toaster } from 'react-hot-toast';
 import { refreshUser } from '../../redux/auth/operations.js';
 import { selectIsRefreshing } from '../../redux/auth/selectors.js';
 
-import HomePage from '../../pages/HomePage/HomePage.jsx';
+import Home from '../../pages/Home/Home.jsx';
 import Layout from '../Layout/Layout.jsx';
 
-const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage.jsx'));
-const NotFoundPage = lazy(() => import('../../pages/NotFoundPage/NotFoundPage.jsx'));
-const RegisterPage = lazy(() => import('../../pages/RegisterPage/RegisterPage.jsx'));
-const ContactsPage = lazy(() => import('../../pages/ContactsPage/ContactsPage.jsx'));
-
-// import css from './App.module.css';
+const Login = lazy(() => import('../../pages/Login/Login.jsx'));
+const NotFound = lazy(() => import('../../pages/NotFound/NotFound.jsx'));
+const Registration = lazy(() => import('../../pages/Registration/Registration.jsx'));
+const Contacts = lazy(() => import('../../pages/Contacts/Contacts.jsx'));
 
 export default function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -34,20 +32,20 @@ export default function App() {
             <b>Please wait...</b>
           ) : (
             <Routes>
-              <Route path='/' element={<HomePage />} />
+              <Route path='/' element={<Home />} />
               <Route
                 path='/contacts'
-                element={<PrivateRoute component={<ContactsPage />} redirectTo='/login' />}
+                element={<PrivateRoute component={<Contacts />} redirectTo='/login' />}
               />
               <Route
                 path='/register'
-                element={<RestrictedRoute component={<RegisterPage />} redirectTo='/contacts' />}
+                element={<RestrictedRoute component={<Registration />} redirectTo='/contacts' />}
               />
               <Route
                 path='/login'
-                element={<RestrictedRoute component={<LoginPage />} redirectTo='/contacts' />}
+                element={<RestrictedRoute component={<Login />} redirectTo='/contacts' />}
               />
-              <Route path='*' element={<NotFoundPage />} />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           )}
         </Suspense>

@@ -1,5 +1,5 @@
 import Modal from 'react-modal';
-import { deleteContact } from '../../redux/contacts/contactsOps.js';
+import { deleteContact } from '../../redux/contacts/operations.js';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
