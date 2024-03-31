@@ -26,10 +26,10 @@ export default function ContactForm() {
     dispatch(addContact(value))
       .unwrap()
       .then(() => {
-        toast.success('Success');
+        toast.success('Success added contact!');
       })
       .catch(() => {
-        toast.error('Error');
+        toast.error('Error added contact!');
       });
     actions.resetForm();
   };

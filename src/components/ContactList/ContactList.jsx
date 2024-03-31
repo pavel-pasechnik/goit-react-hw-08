@@ -13,7 +13,7 @@ export default function ContactList() {
         <ul>
           {contacts.map(contact => {
             return (
-              <li key={contact.id} className='item'>
+              <li key={contact.id} className={css.item}>
                 <Contact name={contact.name} phone={contact.number} id={contact.id} />
               </li>
             );
