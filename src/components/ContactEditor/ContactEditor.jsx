@@ -9,15 +9,15 @@ import { useState } from 'react';
 
 import css from './ContactEditor.module.css';
 
-export default function ContactEditor({ name, number, id, onClose }) {
-  const [nameText, setNameText] = useState(name);
-  const [numberText, setNumberText] = useState(number);
+export default function ContactEditor({ contact, onClose }) {
+  const [nameText, setNameText] = useState(contact.name);
+  const [numberText, setNumberText] = useState(contact.phone);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
     dispatch(
       updateContact({
-        id,
+        id: contact.id,
         name: nameText,
         number: numberText,
       })

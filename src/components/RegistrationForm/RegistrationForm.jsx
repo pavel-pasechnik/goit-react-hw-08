@@ -45,17 +45,17 @@ export default function RegistrationForm() {
       <Form className={css.form} autoComplete='off'>
         <label className={css.label} htmlFor={nameId}>
           Username
-          <Field type='text' name='name' id={nameId} />
+          <Field className={css.input} type='text' name='name' id={nameId} />
           <ErrorMessage className={css.name} name='name' component='span' />
         </label>
         <label className={css.label} htmlFor={emailId}>
           Email
-          <Field type='email' name='email' id={emailId} />
+          <Field className={css.input} type='email' name='email' id={emailId} />
           <ErrorMessage className={css.email} name='email' component='span' />
         </label>
         <label className={css.label} htmlFor={passwordId}>
           Password
-          <Field type='password' name='password' id={passwordId} />
+          <Field className={css.input} type='password' name='password' id={passwordId} />
           <ErrorMessage className={css.password} name='password' component='span' />
         </label>
         <button className={css.submit} type='submit'>

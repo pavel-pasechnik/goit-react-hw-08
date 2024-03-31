@@ -7,12 +7,12 @@ import { Toaster } from 'react-hot-toast';
 import { refreshUser } from '../../redux/auth/operations.js';
 import { selectIsRefreshing } from '../../redux/auth/selectors.js';
 
-import HomePage from '../../pages/HomePage/HomePage.jsx';
 import Layout from '../Layout/Layout.jsx';
-import LoginPage from '../../pages/LoginPage/LoginPage.jsx';
-import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage.jsx';
-import RegisterPage from '../../pages/RegisterPage/RegisterPage.jsx';
 
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
+const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage.jsx'));
+const NotFoundPage = lazy(() => import('../../pages/NotFoundPage/NotFoundPage.jsx'));
+const RegisterPage = lazy(() => import('../../pages/RegisterPage/RegisterPage.jsx'));
 const ContactsPage = lazy(() => import('../../pages/ContactsPage/ContactsPage.jsx'));
 
 // import css from './App.module.css';

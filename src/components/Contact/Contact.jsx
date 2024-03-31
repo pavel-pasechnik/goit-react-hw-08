@@ -16,7 +16,7 @@ export default function Contact({ name, phone, id }) {
   return (
     <>
       {isEditing ? (
-        <ContactEditor name={name} number={phone} id={id} onClose={() => setIsEditing(false)} />
+        <ContactEditor contact={{ name, phone, id }} onClose={() => setIsEditing(false)} />
       ) : (
         <div className={css.card}>
           <div className={css.wrapper}>

@@ -41,13 +41,17 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         validationSchema={FeedbackSchema}>
         <Form>
-          <label htmlFor={nameId}>Name</label>
-          <Field type='text' name='name' id={nameId}></Field>
+          <label className={css.label} htmlFor={nameId}>
+            Name
+          </label>
+          <Field className={css.input} type='text' name='name' id={nameId}></Field>
           <span className={css.name}>
             <ErrorMessage name='name' as='span' />
           </span>
-          <label htmlFor={numberId}>Number</label>
-          <Field type='text' name='number' id={numberId}></Field>
+          <label className={css.label} htmlFor={numberId}>
+            Number
+          </label>
+          <Field className={css.input} type='text' name='number' id={numberId}></Field>
           <span className={css.number}>
             <ErrorMessage name='number' as='span' />
           </span>
