@@ -1,10 +1,10 @@
-import Modal from 'react-modal';
-import { deleteContact } from '../../redux/contacts/operations.js';
 import { toast } from 'react-hot-toast';
+import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import css from './DeleteModal.module.css';
+import { deleteContact } from '../../redux/contacts/operations.js';
 
 Modal.setAppElement(document.getElementById('root'));
 

@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react-redux/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:import/recommended',
     'plugin:prettier/recommended',
     'stylelint',
     'prettier',
@@ -19,10 +20,56 @@ module.exports = {
   rules: {
     'no-console': 0,
     'react/prop-types': 0,
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true, allowExportNames: ['useDeliveryForm'] },
+    ],
+    'react/jsx-no-target-blank': 'off',
     'react/jsx-filename-extension': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
-    'sort-imports': 'error',
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling', 'index', 'object', 'type', 'unknown'],
+        ],
+        pathGroups: [
+          {
+            pattern: 'components',
+            group: 'internal',
+          },
+          {
+            pattern: 'common',
+            group: 'internal',
+          },
+          {
+            pattern: 'routes/ **',
+            group: 'internal',
+          },
+          {
+            pattern: 'assets/**',
+            group: 'internal',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['internal'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
   globals: {
     getApp: false,

@@ -1,14 +1,14 @@
-import { Route, Routes } from 'react-router-dom';
-import { Suspense, lazy, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { PrivateRoute } from '../Routes/PrivateRoute.jsx';
-import { RestrictedRoute } from '../Routes/RestrictedRoute.jsx';
+import { lazy, Suspense, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { refreshUser } from '../../redux/auth/operations.js';
-import { selectIsRefreshing } from '../../redux/auth/selectors.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 
 import Home from '../../pages/Home/Home.jsx';
+import { refreshUser } from '../../redux/auth/operations.js';
+import { selectIsRefreshing } from '../../redux/auth/selectors.js';
 import Layout from '../Layout/Layout.jsx';
+import { PrivateRoute } from '../Routes/PrivateRoute.jsx';
+import { RestrictedRoute } from '../Routes/RestrictedRoute.jsx';
 
 const Login = lazy(() => import('../../pages/Login/Login.jsx'));
 const NotFound = lazy(() => import('../../pages/NotFound/NotFound.jsx'));

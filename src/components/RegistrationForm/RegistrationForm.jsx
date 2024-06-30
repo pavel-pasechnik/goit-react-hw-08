@@ -1,11 +1,11 @@
-import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { register } from '../../redux/auth/operations.js';
+import { useId } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { useId } from 'react';
+import * as Yup from 'yup';
 
 import css from './RegistrationForm.module.css';
+import { register } from '../../redux/auth/operations.js';
 
 const initialValues = {
   name: '',

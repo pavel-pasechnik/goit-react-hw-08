@@ -1,10 +1,10 @@
-import ContactEditor from '../ContactEditor/ContactEditor.jsx';
-import DeleteModal from '../DeleteModal/DeleteModal.jsx';
+import { useState } from 'react';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPersonSharp } from 'react-icons/io5';
-import { useState } from 'react';
 
 import css from './Contact.module.css';
+import ContactEditor from '../ContactEditor/ContactEditor.jsx';
+import DeleteModal from '../DeleteModal/DeleteModal.jsx';
 
 export default function Contact({ name, phone, id }) {
   const [isEditing, setIsEditing] = useState(false);

@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { IoIosSearch } from 'react-icons/io';
-import { changeFilter } from '../../redux/filters/slice.js';
-import { selectFilter } from '../../redux/filters/selectors.js';
 import { useId } from 'react';
+import { IoIosSearch } from 'react-icons/io';
+import { useDispatch, useSelector } from 'react-redux';
 
 import css from './SearchBox.module.css';
+import { selectFilter } from '../../redux/filters/selectors.js';
+import { changeFilter } from '../../redux/filters/slice.js';
 
 export default function SearchBox() {
   const searchBarId = useId();

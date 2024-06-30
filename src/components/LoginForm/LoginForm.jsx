@@ -1,12 +1,12 @@
-import * as Yup from 'yup';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { Link } from 'react-router-dom';
-import { login } from '../../redux/auth/operations.js';
+import { useId } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { useId } from 'react';
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
 
 import css from './LoginForm.module.css';
+import { login } from '../../redux/auth/operations.js';
 
 const initialValues = {
   email: '',

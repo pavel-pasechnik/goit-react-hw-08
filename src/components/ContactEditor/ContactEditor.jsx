@@ -1,13 +1,12 @@
 import { Field, Form, Formik } from 'formik';
+import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoPersonSharp } from 'react-icons/io5';
-import { fetchContacts } from '../../redux/contacts/operations.js';
-import { toast } from 'react-hot-toast';
-import { updateContact } from '../../redux/contacts/operations.js';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 
 import css from './ContactEditor.module.css';
+import { fetchContacts, updateContact } from '../../redux/contacts/operations.js';
 
 export default function ContactEditor({ contact, onClose }) {
   const [nameText, setNameText] = useState(contact.name);

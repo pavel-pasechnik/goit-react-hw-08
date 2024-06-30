@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "stylelint \"**/*.{css,js}\" --fix; eslint  . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "stylelint \"**/*.{css,js}\" --fix && eslint  . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-stylelint": "^21.0.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.0",
@@ -41,6 +42,7 @@
     "eslint-plugin-react-redux": "^4.1.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "htmlhint": "^1.1.4",
+    "husky": "^9.0.11",
     "postcss-styled-components": "^0.2.1",
     "prettier": "3.2.5",
     "prettier-stylelint": "^0.4.2",
