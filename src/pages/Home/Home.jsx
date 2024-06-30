@@ -1,5 +1,5 @@
 import css from './Home.module.css';
-import postImg from '../../../public/phone.jpg';
+import { postImg } from '../../assets/index.js';
 
 export default function Home() {
   return (
