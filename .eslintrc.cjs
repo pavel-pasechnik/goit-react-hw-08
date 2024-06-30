@@ -3,19 +3,28 @@ module.exports = {
   env: { node: true, browser: true, es2024: true },
   extends: [
     'eslint:recommended',
+    'plugin:import/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:react-redux/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:import/recommended',
     'plugin:prettier/recommended',
     'stylelint',
     'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { parser: 'babel-eslint', ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
+  parserOptions: { parser: ['@babel/eslint-parser'], ecmaVersion: 'latest', sourceType: 'module' },
+  settings: {
+    react: { version: '18.2' },
+    'import/resolver': {
+      node: {
+        paths: ['node_modules'],
+      },
+    },
+    'import/extensions': ['.js', '.jsx'],
+    'import/ignore': ['.scss', '.less', '.css'],
+  },
   plugins: ['react-refresh', 'jsx-a11y', 'react-redux'],
   rules: {
     'no-console': 0,
@@ -27,6 +36,7 @@ module.exports = {
     'react/jsx-no-target-blank': 'off',
     'react/jsx-filename-extension': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
+    'react-redux/connect-prefer-named-arguments': 2,
     'sort-imports': [
       'error',
       {
